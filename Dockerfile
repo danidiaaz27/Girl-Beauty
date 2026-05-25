@@ -7,9 +7,9 @@ COPY src ./src
 RUN chmod +x mvnw && ./mvnw -DskipTests package -q
 
 # Run stage
-FROM eclipse-temurin:21-jre
+FROM maven:3.10.1-jdk-21 AS build
 WORKDIR /app
 COPY --from=build /app/target/GirlStore-0.0.1-SNAPSHOT.jar /app/app.jar
-ENV PORT=8080
-EXPOSE 8080
-ENTRYPOINT ["sh","-c","java -jar /app/app.jar --server.port=${PORT}"]
+COPY pom.xml .mvn/ ./
+COPY src ./src
+RUN mvn -B -DskipTests package -q
