@@ -1,10 +1,10 @@
 # Build stage
-FROM maven:3.10.1-eclipse-temurin-21 AS build
+FROM eclipse-temurin:21-jdk AS build
 WORKDIR /app
 # Project files live in the nested folder `GirlStore` in the repo root
 COPY GirlStore/pom.xml GirlStore/mvnw GirlStore/.mvn/ ./
 COPY GirlStore/src ./src
-RUN mvn -DskipTests package -q
+RUN chmod +x mvnw && ./mvnw -DskipTests package -q
 
 # Run stage
 FROM eclipse-temurin:21-jre
