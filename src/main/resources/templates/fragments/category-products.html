@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+    <section class="category-products reveal" th:fragment="grid(sectionTitle, sectionSubtitle, products)">
+        <div class="section-header category-section-header">
+            <div>
+                <h2 th:text="${sectionTitle}">Colección premium</h2>
+                <p th:text="${sectionSubtitle}">Descripción de la categoría</p>
+            </div>
+        </div>
+
+        <div class="category-grid">
+            <article class="category-card" th:each="product : ${products}">
+                <img th:src="${product.imagePath}" th:alt="${product.name}">
+                <div class="product-info">
+                    <h3 th:text="${product.name}">Producto</h3>
+                    <div class="price-stars">
+                        <p th:text="|S/${product.price}.00|">S/0.00</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                    <button type="button"
+                            th:attr="data-product-name=${product.name}, data-product-price=${product.price}">
+                        Agregar al carrito
+                    </button>
+                </div>
+            </article>
+        </div>
+    </section>
+
+</body>
+</html>
