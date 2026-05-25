@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+    <header class="navbar" th:fragment="navbar">
+        <div class="nav-left"></div>
+
+        <div class="nav-center">
+            <a class="brand-link" th:href="@{/}" style="text-decoration:none;">
+                <h1 class="logo">Daniela Beauty</h1>
+            </a>
+        </div>
+
+        <div class="nav-right">
+            <div class="cart-icon" onclick="abrirCarrito()">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span id="contador-carrito">0</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="cart-panel" id="cart-panel" th:fragment="cart">
+        <div class="cart-header">
+            <h2>Tu carrito</h2>
+            <i class="fa-solid fa-xmark" onclick="cerrarCarrito()"></i>
+        </div>
+
+        <div id="cart-items"></div>
+
+        <div class="cart-footer">
+            <h3 id="total">Total: S/0</h3>
+            <button onclick="enviarWhatsApp()">Realizar pedido</button>
+        </div>
+    </div>
+
+    <footer class="footer reveal" th:fragment="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h2>Daniela Beauty</h2>
+                <p>
+                    Belleza sofisticada inspirada en la feminidad,
+                    elegancia y lujo moderno.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Shop</h3>
+                <a th:href="@{/labiales}">Labiales</a>
+                <a th:href="@{/rubores}">Rubores</a>
+                <a th:href="@{/bases}">Bases</a>
+                <a th:href="@{/skincare}">Skincare</a>
+            </div>
+
+            <div class="footer-links">
+                <h3>Ayuda</h3>
+                <a href="#">Preguntas frecuentes</a>
+                <a href="#">Envíos</a>
+                <a href="#">Términos</a>
+                <a href="#">Contacto</a>
+            </div>
+
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-tiktok"></i>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <i class="fa-brands fa-facebook-f"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Daniela Beauty — Todos los derechos reservados
+        </div>
+    </footer>
+
+</body>
+</html>
