@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: girlstore
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: JAVA_VERSION
+        value: "21"
+      - key: PORT
+        value: "8080"

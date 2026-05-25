@@ -1,0 +1,4 @@
+GirlStore/target/
+GirlStore/.mvn/
+.git/
+*.log
