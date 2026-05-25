@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: girlstore
-    env: java
-    plan: free
-    buildCommand: chmod +x mvnw && ./mvnw -DskipTests package
-    startCommand: java -jar target/GirlStore-0.0.1-SNAPSHOT.jar
-    autoDeploy: true
