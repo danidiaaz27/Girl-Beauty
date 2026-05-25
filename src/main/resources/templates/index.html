@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniela Beauty</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div th:replace="~{fragments/shared :: navbar}"></div>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+
+        <div class="hero-content">
+
+            <p class="subtitle">BEAUTY STORE ✨</p>
+
+            <h2>
+                Maquillaje que <br>
+                resalta tu belleza
+            </h2>
+
+            <p class="description">
+                Descubre nuestra colección exclusiva inspirada
+                en la sofisticación parisina y el ritual de la belleza cotidiana.
+            </p>
+
+            <button>Comprar ahora</button>
+
+        </div>
+
+    </section>
+
+    <!-- COLECCIONES -->
+
+    <section class="collections reveal">
+
+        <p class="collection-icon">♥</p>
+
+        <h2>Nuestras Colecciones</h2>
+
+        <div class="categories">
+
+            <a class="category category-link" th:href="@{/labiales}">
+                <img src="/img/labiales.jpg" alt="">
+                <p>Labiales</p>
+            </a>
+
+            <a class="category category-link" th:href="@{/rubores}">
+                <img src="/img/rubores.jpg" alt="">
+                <p>Rubores</p>
+            </a>
+
+            <a class="category category-link" th:href="@{/bases}">
+                <img src="/img/bases.jpg" alt="">
+                <p>Bases</p>
+            </a>
+
+            <a class="category category-link" th:href="@{/sombras}">
+                <img src="/img/sombras.jpg" alt="">
+                <p>Sombras</p>
+            </a>
+
+            <a class="category category-link" th:href="@{/iluminadores}">
+                <img src="/img/iluminadores.jpg" alt="Iluminadores">
+                <p>Iluminadores</p>
+            </a>
+
+            <a class="category category-link" th:href="@{/skincare}">
+                <img src="/img/skincare.jpg" alt="">
+                <p>Skincare</p>
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- Mas amados -->
+
+    <section class="best-sellers reveal">
+
+        <div class="section-header">
+
+            <div>
+                <h2>Más Amados</h2>
+                <p>Los favoritos de nuestra comunidad</p>
+            </div>
+
+            <a href="#">Ver todo</a>
+
+        </div>
+
+        <div class="products">
+
+            <!-- PRODUCTO 1 -->
+
+            <div class="product-card">
+
+                <div class="favorite">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+
+                <img src="/img/producto1.jpg" alt="">
+
+                <div class="product-info">
+
+                    <h3>Labial Matte Maybelline</h3>
+
+                    <div class="price-stars">
+
+                        <p>S/24.00</p>
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                    </div>
+
+                    <button onclick="agregarCarrito('Labial Matte Rose', 24)">
+                        Agregar al carrito
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- PRODUCTO 2 -->
+
+            <div class="product-card">
+
+                <div class="favorite">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+
+                <img src="/img/producto2.jpg" alt="">
+
+                <div class="product-info">
+
+                    <h3>Rimel de Maybelline</h3>
+
+                    <div class="price-stars">
+
+                        <p>S/32.00</p>
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                    </div>
+
+                    <button onclick="agregarCarrito('Rubor Pink Glow', 32)">
+                        Agregar al carrito
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- PRODUCTO 3 -->
+
+            <div class="product-card">
+
+                <div class="favorite">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+
+                <img src="/img/producto3.jpg" alt="">
+
+                <div class="product-info">
+
+                    <h3>Rubor de Sheglam</h3>
+
+                    <div class="price-stars">
+
+                        <p>S/45.00</p>
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                    </div>
+
+                    <button onclick="agregarCarrito('Base Silk Finish', 45)">
+                        Agregar al carrito
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- PRODUCTO 4 -->
+
+            <div class="product-card">
+
+                <div class="favorite">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+
+                <img src="/img/producto4.jpg" alt="">
+
+                <div class="product-info">
+
+                    <h3>Base de Maybelline</h3>
+
+                    <div class="price-stars">
+
+                        <p>S/58.00</p>
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                    </div>
+
+                    <button onclick="agregarCarrito('Serum Radiance', 58)">
+                        Agregar al carrito
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <div th:replace="~{fragments/shared :: cart}"></div>
+    <div th:replace="~{fragments/shared :: footer}"></div>
+
+    <script src="/js/script.js"></script>
+
+</body>
+
+</html>

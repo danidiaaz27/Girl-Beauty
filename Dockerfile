@@ -1,9 +1,9 @@
 # Build stage
 FROM eclipse-temurin:21-jdk AS build
 WORKDIR /app
-# Copy Maven wrapper and project from the subfolder 'GirlStore'
-COPY GirlStore/pom.xml GirlStore/mvnw GirlStore/.mvn/ ./
-COPY GirlStore/src ./src
+# Copy project files from the repository root
+COPY pom.xml mvnw .mvn/ ./
+COPY src ./src
 RUN chmod +x mvnw && ./mvnw -DskipTests package -q
 
 # Run stage
